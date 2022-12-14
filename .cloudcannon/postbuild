@@ -1,0 +1,3 @@
+# Install and run generate
+npm i
+npx "@bookshop/generate"
