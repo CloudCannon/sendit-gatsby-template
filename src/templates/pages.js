@@ -12,8 +12,7 @@ const page = {
     data: {
         ...node.frontmatter,
     },
-    contentHtml: node.html
-    };
+  };
 //   const author = null;
 //   const nextPost = null;
     return (

@@ -96,8 +96,7 @@ const HomePage = (props) => {
       data: {
           ...node.frontmatter,
       },
-      contentHtml: node.html
-      };
+    };
 
   const posts = {
     pageInfo: {
