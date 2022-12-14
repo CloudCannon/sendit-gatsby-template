@@ -23,135 +23,139 @@ const page = {
 }
 
 export const query = graphql`
-query ($id: String) {
-  page: allMarkdownRemark(filter: {fields: {sourceName: {eq: "pages"}}, id: {eq: $id}}) {
-    nodes {
-        frontmatter {
-          title
-          seo {
-            page_description
-            canonical_url
-            featured_image
-            featured_image_alt
-            author_twitter_handle
-            open_graph_type
-            no_index
-          }
-          content_blocks {
-            _bookshop_name
+  query ($id: String) {
+    page: allMarkdownRemark(filter: {fields: {sourceName: {eq: "pages"}}, id: {eq: $id}}) {
+      nodes {
+          frontmatter {
             title
-            description
-            title_suffix
-            image
-            image_alt
-            reversed
-            alternate_style
-            video_url
-            remove_top_padding
-            button {
-              link
-              text
+            seo {
+              page_description
+              canonical_url
+              featured_image
+              featured_image_alt
+              author_twitter_handle
+              open_graph_type
+              no_index
             }
-            numbers {
-              prefix
-              number
-              suffix
-              text
-            }
-            slider {
-              image
-              image_alt
-              author
-              designation
-              message
-            }
-            pricing_tier {
-              tier
-              highlight_tier
-              description
-              currency_symbol
-              price
-              has_discount
-              discount_price
-              features {
-                item
-                active_feature
-              }
-            }
-            FAQ {
+            content_blocks {
+              _bookshop_name
               title
               description
-            }
-            hero_images {
+              title_suffix
               image
               image_alt
-              placement
-            }
-            team_members {
-              name
-              designation
-              image
-              image_alt
-            }
-            address {
-              heading
-              address
-            }
-            phone {
-              heading
-              cell
-              image
-              image_alt
-            }
-            email {
-              heading
-              email
-              image
-              image_alt
-            }
-            form {
-              checkbox_text
-              sign_up_text
-              heading
-              fullname {
+              reversed
+              alternate_style
+              video_url
+              remove_top_padding
+              button {
+                link
+                text
+              }
+              numbers {
+                prefix
+                number
+                suffix
+                text
+              }
+              slider {
+                image
+                image_alt
+                author
+                designation
+                message
+              }
+              pricing_tier {
+                tier
+                highlight_tier
+                description
+                currency_symbol
+                price
+                has_discount
+                discount_price
+                features {
+                  item
+                  active_feature
+                }
+              }
+              FAQ {
+                title
+                description
+              }
+              hero_images {
+                image
+                image_alt
+                placement
+              }
+              team_members {
+                name
+                designation
+                image
+                image_alt
+              }
+              address {
                 heading
-                placeholder
+                address
+              }
+              phone {
+                heading
+                cell
+                image
+                image_alt
               }
               email {
                 heading
-                placeholder
+                email
+                image
+                image_alt
               }
-              phone_number {
+              form {
+                checkbox_text
+                sign_up_text
                 heading
-                placeholder
+                fullname {
+                  heading
+                  placeholder
+                }
+                email {
+                  heading
+                  placeholder
+                }
+                phone_number {
+                  heading
+                  placeholder
+                }
+                message {
+                  heading
+                  placeholder
+                }
+                submit_button {
+                  text
+                }
+                password {
+                  heading
+                }
+                retype_password {
+                  heading
+                }
+                log_in_button {
+                  link
+                  text
+                }
+                sign_up_button {
+                  link
+                  text
+                }
               }
-              message {
+              terms_and_conditions {
                 heading
-                placeholder
-              }
-              submit_button {
-                text
-              }
-              password {
-                heading
-              }
-              retype_password {
-                heading
-              }
-              log_in_button {
-                link
-                text
-              }
-              sign_up_button {
-                link
-                text
+                description
               }
             }
           }
         }
-      }
+    }
   }
-}
 `
 
 export default PagesTemplate
