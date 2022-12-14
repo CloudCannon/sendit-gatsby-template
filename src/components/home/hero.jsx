@@ -4,7 +4,6 @@ import * as React from 'react'
 const md = new MarkdownIt({ html: true });
 
 export default function HomeHero( {block, dataBinding}) {
-    console.log('HomeHero')
 	return (
 		<section className="hero-two" data-cms-bind={dataBinding}>
             <div className="hero-two-shape"></div>

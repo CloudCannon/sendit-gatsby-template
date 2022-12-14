@@ -8,8 +8,6 @@ export default function BlogPost({ page, posts, headline, pageNo }) {
 
 	const wordCount = page.wordCount;
 	const readingTime  = Math.floor(wordCount / 183)
-    console.log('page')
-    console.log(page)
 	return (
 		<>
 			{/* <ArticleJsonLd

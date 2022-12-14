@@ -98,7 +98,6 @@ exports.createPages = async function ({ actions, graphql }) {
 			}
 		})
 	})
-	console.log(slugs)
 	slugs.forEach((tag) => {
 		actions.createPage({
 			path: `/tags/${tag}`,
