@@ -30,7 +30,6 @@ export const query = graphql `
   }
 `
 const NotFound = (props) => {
-  console.log(props)
   const node = props.data.page.nodes[0];
   const page = {
       data: {
