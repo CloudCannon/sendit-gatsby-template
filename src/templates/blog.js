@@ -2,15 +2,8 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import DefaultLayout from '../components/layouts/default';
 import BlogList from '../components/blog/list';
-import Blocks from '../components/shared/blocks';
-// import { CloudCannonConnect } from '@cloudcannon/react-connector'
+import { CloudCannonConnect } from '@cloudcannon/react-connector'
 
-// const HomePage = (props) => {
-// 	const page = props.data.page.nodes[0].frontmatter;
-
-// 	const LiveEditingComponent = CloudCannonConnect(HomePageComponents);
-// 	return <LiveEditingComponent page={ page } />
-// }
 
 export const query = graphql`
   query ($skip: Int! = 0, $limit: Int! = 9, $tagFilter: MarkdownRemarkFrontmatterFilterInput){
@@ -89,39 +82,34 @@ export const query = graphql`
   }
 `
 const HomePage = (props) => {
-	// const page = props.data.page.nodes[0];
+  console.log('props')
+  console.log(props)
   const node = props.data.page.nodes[0];
-  // const nodePost = props.data.posts;
   const page = {
-      data: {
-          ...node.frontmatter,
-      },
-    };
+    data: {
+      ...node.frontmatter,
+    },
+  };
 
   const posts = {
     pageInfo: {
-      ... props.data.posts.pageInfo
+      ...props.data.posts.pageInfo
     },
   }
 
   posts.data = props.data.posts.nodes.map((node) => ({
     data: {
-        ...node.frontmatter,
+      ...node.frontmatter,
     },
     slug: node.parent.name
-    }));
+  }));
 
-  // const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
-	// return <LiveEditingComponent page={ page } />
+  const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
   return (
-    <DefaultLayout page={page}>
-      <BlogList page={page} posts={posts} pageNo={0}></BlogList>
-      {/* <Blocks content_blocks={page.data.content_blocks } ></Blocks> */}
-    </DefaultLayout>
+    <LiveEditingComponent page={page}>
+      <BlogList page={page} posts={posts} headline={props.pageContext.headline}></BlogList>
+    </LiveEditingComponent>
   )
 }
 
 export default HomePage
-// export default function Component () {
-//   return "Hello world"
-// }

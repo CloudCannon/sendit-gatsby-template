@@ -105,7 +105,8 @@ exports.createPages = async function ({ actions, graphql }) {
 			context: {
 				limit: postsPerPage,
 				currentPage: 0,
-				tagFilter: { "tags": { "in": [tag] } }
+				tagFilter: { "tags": { "in": [tag] } },
+				headline: tag
 			},
 		})
 	})

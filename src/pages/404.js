@@ -2,8 +2,9 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import DefaultLayout from '../components/layouts/default';
 import Blocks from '../components/shared/blocks';
+import { CloudCannonConnect } from '@cloudcannon/react-connector'
 
-export const query = graphql `
+export const query = graphql`
   query {
     page: allMarkdownRemark(filter: {fields: {sourceName: {eq: "pages"}}, fileAbsolutePath: {regex: "/.*content\\/pages\\/404/"}}) {
       nodes {
@@ -32,14 +33,16 @@ export const query = graphql `
 const NotFound = (props) => {
   const node = props.data.page.nodes[0];
   const page = {
-      data: {
-          ...node.frontmatter,
-      },
-      };
-	return (
-      <DefaultLayout page={page}>
-        <Blocks content_blocks={page.data.content_blocks } ></Blocks>
-      </DefaultLayout>
-	);
+    data: {
+      ...node.frontmatter,
+    },
+  };
+
+  const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
+  return (
+    <LiveEditingComponent page={page}>
+      <Blocks content_blocks={page.data.content_blocks} ></Blocks>
+    </LiveEditingComponent>
+  );
 }
 export default NotFound

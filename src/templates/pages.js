@@ -2,24 +2,23 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import DefaultLayout from '../components/layouts/default';
 import Blocks from '../components/shared/blocks';
-// import { CloudCannonConnect } from '@cloudcannon/react-connector'
+import { CloudCannonConnect } from '@cloudcannon/react-connector'
 
-// const LiveEditingComponent = CloudCannonConnect(PostLayout);
 
 const PagesTemplate = (props) => {
-const node = props.data.page.nodes[0];
-const page = {
+  const node = props.data.page.nodes[0];
+  const page = {
     data: {
-        ...node.frontmatter,
+      ...node.frontmatter,
     },
   };
-//   const author = null;
-//   const nextPost = null;
-    return (
-        <DefaultLayout page={page}>
-        <Blocks content_blocks={page.data.content_blocks } ></Blocks>
-        </DefaultLayout>
-    )
+
+  const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
+  return (
+    <LiveEditingComponent page={page}>
+      <Blocks content_blocks={page.data.content_blocks} ></Blocks>
+    </LiveEditingComponent>
+  )
 }
 
 export const query = graphql`

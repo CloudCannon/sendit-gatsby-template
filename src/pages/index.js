@@ -2,16 +2,9 @@ import * as React from 'react'
 import { graphql } from 'gatsby'
 import DefaultLayout from '../components/layouts/default';
 import Blocks from '../components/shared/blocks';
-// import { CloudCannonConnect } from '@cloudcannon/react-connector'
+import { CloudCannonConnect } from '@cloudcannon/react-connector'
 
-// const HomePage = (props) => {
-// 	const page = props.data.page.nodes[0].frontmatter;
-
-// 	const LiveEditingComponent = CloudCannonConnect(HomePageComponents);
-// 	return <LiveEditingComponent page={ page } />
-// }
-
-export const query = graphql `
+export const query = graphql`
   query {
     page: allMarkdownRemark(filter: {fields: {sourceName: {eq: "pages"}}, fileAbsolutePath: {regex: "/.*content\\/pages\\/index/"}}) {
       nodes {
@@ -61,24 +54,19 @@ export const query = graphql `
   }
 `
 const HomePage = (props) => {
-	// const page = props.data.page.nodes[0];
   const node = props.data.page.nodes[0];
   const page = {
-      data: {
-          ...node.frontmatter,
-      },
-    };
-  
-  // const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
-	// return <LiveEditingComponent page={ page } />
+    data: {
+      ...node.frontmatter,
+    },
+  };
+
+  const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
   return (
-    <DefaultLayout page={page}>
-      <Blocks content_blocks={page.data.content_blocks } ></Blocks>
-    </DefaultLayout>
+    <LiveEditingComponent page={page}>
+      <Blocks content_blocks={page.data.content_blocks} ></Blocks>
+    </LiveEditingComponent>
   )
 }
 
 export default HomePage
-// export default function Component () {
-//   return "Hello world"
-// }
