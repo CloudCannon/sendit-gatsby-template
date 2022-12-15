@@ -1,8 +1,8 @@
 # Sendit
 
-Sendit is a polished, marketing website template for Gatsby. Browse through a [live demo](https://mysterious-oryx.cloudvent.net/). 
+Sendit is a polished, marketing website template for Gatsby. Browse through a [live demo](https://freezing-door.cloudvent.net/). 
 
-![Sendit template screenshot](public/images/_screenshot.png)
+![Sendit template screenshot](static/images/_screenshot.png)
 
 
 [![Deploy to CloudCannon](https://buttons.cloudcannon.com/deploy.svg)](https://app.cloudcannon.com/register#sites/connect/github/CloudCannon/sendit-gatsby-template)
