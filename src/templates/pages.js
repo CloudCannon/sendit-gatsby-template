@@ -13,11 +13,11 @@ const PagesTemplate = (props) => {
     },
   };
 
-  const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
+  const LiveEditingComponent = CloudCannonConnect(({page}) => <Blocks content_blocks={page.data.content_blocks} ></Blocks>);
   return (
-    <LiveEditingComponent page={page}>
-      <Blocks content_blocks={page.data.content_blocks} ></Blocks>
-    </LiveEditingComponent>
+    <DefaultLayout page={page}>
+      <LiveEditingComponent page={page}/>
+    </DefaultLayout>
   )
 }
 
