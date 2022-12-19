@@ -23,11 +23,15 @@ const PostTemplate = (props) => {
     slug: node.parent.name
   }));
 
-  const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
+  const LiveEditingComponent = CloudCannonConnect(({page, posts}) => <BlogPost page={page} posts={posts} ></BlogPost>, {
+		valueOptions: {
+			keepMarkdownAsHTML: false
+		  }
+	});
   return (
-    <LiveEditingComponent page={page}>
-      <BlogPost page={page} posts={posts} ></BlogPost>
-    </LiveEditingComponent>
+    <DefaultLayout page={page}>
+      <LiveEditingComponent page={page} posts={posts} ></LiveEditingComponent>
+    </DefaultLayout>
   )
 }
 

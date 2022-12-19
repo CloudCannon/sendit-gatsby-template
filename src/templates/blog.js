@@ -81,7 +81,7 @@ export const query = graphql`
     }
   }
 `
-const HomePage = (props) => {
+const BlogPage = (props) => {
   console.log('props')
   console.log(props)
   const node = props.data.page.nodes[0];
@@ -104,12 +104,16 @@ const HomePage = (props) => {
     slug: node.parent.name
   }));
 
-  const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
+  const LiveEditingComponent = CloudCannonConnect(({page, posts, headline}) => <BlogList page={page} posts={posts} headline={headline} ></BlogList>, {
+		valueOptions: {
+			keepMarkdownAsHTML: false
+		  }
+	});
   return (
-    <LiveEditingComponent page={page}>
-      <BlogList page={page} posts={posts} headline={props.pageContext.headline}></BlogList>
-    </LiveEditingComponent>
+    <DefaultLayout page={page}>
+      <LiveEditingComponent page={page} posts={posts} headline={props.pageContext.headline}></LiveEditingComponent>
+    </DefaultLayout>
   )
 }
 
-export default HomePage
+export default BlogPage

@@ -61,11 +61,15 @@ const HomePage = (props) => {
     },
   };
 
-  const LiveEditingComponent = CloudCannonConnect(DefaultLayout);
+  const LiveEditingComponent = CloudCannonConnect(({page}) => <Blocks content_blocks={page.data.content_blocks} ></Blocks>, {
+		valueOptions: {
+			keepMarkdownAsHTML: false
+		  }
+	});
   return (
-    <LiveEditingComponent page={page}>
-      <Blocks content_blocks={page.data.content_blocks} ></Blocks>
-    </LiveEditingComponent>
+    <DefaultLayout page={page}>
+      <LiveEditingComponent page={page} ></LiveEditingComponent>
+    </DefaultLayout>
   )
 }
 
