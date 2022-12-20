@@ -19,6 +19,12 @@ export default function DefaultLayout({ children, page }) {
 				<meta charset="utf-8" />
 
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				
+				<script src="/vendor/jQuery/jquery.min.js" type="text/javascript"/>
+				<script src="/vendor/bootstrap/bootstrap.bundle.min.js" type="text/javascript"/>
+				<script src="/vendor/counter-up/countup.js" type="text/javascript"/>
+				<script src="/vendor/magnific-popup/magnific-popup.min.js" type="text/javascript"/>
+				<script src="/js/script.js" type="text/javascript" async/>
 
 			</Helmet>
 
@@ -68,11 +74,6 @@ export default function DefaultLayout({ children, page }) {
             {children}
 			<Footer page={page}/>
             
-			<script src="/vendor/jQuery/jquery.min.js" async></script>
-			<script src="/vendor/bootstrap/bootstrap.bundle.min.js" async></script>
-			<script src="/vendor/counter-up/countup.js" async></script>
-			<script src="/vendor/magnific-popup/magnific-popup.min.js" async></script>
-			<script src="/js/script.js" async></script>
 		</>
 	);
 }

@@ -56,9 +56,9 @@ export default function Navigation({ children, page }) {
                                         x2="21.5"
                                         y2="5.5"
                                         stroke="#292D32"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                     <line
                                         x1="4.5"
@@ -66,9 +66,9 @@ export default function Navigation({ children, page }) {
                                         x2="21.5"
                                         y2="12.5"
                                         stroke="#292D32"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                     <line
                                         x1="11.5"
@@ -76,9 +76,9 @@ export default function Navigation({ children, page }) {
                                         x2="21.5"
                                         y2="19.5"
                                         stroke="#292D32"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                 </svg>
                             </span>
@@ -93,16 +93,16 @@ export default function Navigation({ children, page }) {
                                     <path
                                         d="M21.5 6.5L6.5 21.5"
                                         stroke="#404152"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                     <path
                                         d="M21.5 21.5L6.5 6.5"
                                         stroke="#404152"
-                                        stroke-width="3"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
+                                        strokeWidth="3"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
                                     />
                                 </svg>
                             </span>

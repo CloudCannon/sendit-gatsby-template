@@ -34,7 +34,6 @@ export default function Footer({ children, page }) {
                             </div>
 
                             {data.footer.sections.map((section, i) => (
-                                <>
                                     <div className="col-6 col-md-3 col-lg-2 order-1" key={i}>
                                         <div className="footer-widget">
                                             <h3 className="">{section.title}</h3>
@@ -49,7 +48,6 @@ export default function Footer({ children, page }) {
                                             </ul>
                                         </div>
                                     </div>
-                                </>
                             ))}
                         </div>
                     </div>

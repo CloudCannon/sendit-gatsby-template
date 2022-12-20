@@ -112,6 +112,11 @@ export const query = graphql`
                 image
                 image_alt
               }
+              video {
+                image
+                image_alt
+                link
+              }
               form {
                 checkbox_text
                 sign_up_text
