@@ -1,7 +1,6 @@
-import {Link} from "gatsby";
 import MarkdownIt from 'markdown-it';
-const md = new MarkdownIt({ html: true });
 import * as React from 'react'
+const md = new MarkdownIt({ html: true });
 
 export default function ContactHero({ block, dataBinding }) {
     return (

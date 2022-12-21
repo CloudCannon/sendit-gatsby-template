@@ -59,6 +59,7 @@ const HomePage = (props) => {
     data: {
       ...node.frontmatter,
     },
+    slug: ''
   };
 
   const LiveEditingComponent = CloudCannonConnect(({page}) => <Blocks content_blocks={page.data.content_blocks} ></Blocks>, {

@@ -1,8 +1,8 @@
 import PostSummary from '../../components/posts/summary';
 import MarkdownIt from 'markdown-it';
 import {capitalise} from '../../../lib/string-helper';
-const md = new MarkdownIt({ html: true });
 import * as React from 'react'
+const md = new MarkdownIt({ html: true });
 
 export default function BlogList({ page, posts, headline }) {
     const pageNo = (pageNo) => {

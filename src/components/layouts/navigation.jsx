@@ -1,4 +1,3 @@
-
 import React from 'react'
 import {Link} from 'gatsby';
 import data from '../../../lib/data';
@@ -19,11 +18,6 @@ export default function Navigation({ children, page }) {
         };
       }, []);
 
-    const handleClick = event => {
-        var navbar = $('#mainnavigationBar');
-        navbar.toggleClass('bg-nav');
-    };
-
     return (
         <>
             <header>
@@ -40,7 +34,6 @@ export default function Navigation({ children, page }) {
                             aria-controls="navbarSupportedContent"
                             aria-expanded="false"
                             aria-label="Toggle navigation"
-                            onClick={handleClick}
                         >
                             <span className="navbar-toggler-default">
                                 <svg
@@ -112,7 +105,7 @@ export default function Navigation({ children, page }) {
 
                                 {data.navigation.items.map((link, i) => (
                                     <li key={i} className="nav-item">
-                                        <Link href={`${link.link}`} className={`nav-link ${(page?.slug === 'index' ? 'home' : page?.slug?.toLowerCase()) === link.text.toLowerCase() ? 'active' : ''}`}>
+                                        <Link href={`${link.link}`} className={`nav-link ${(page?.slug === '' ? 'home' : page?.slug?.toLowerCase()) === link.text.toLowerCase() ? 'active' : ''}`}>
                                             {link.text}
                                         </Link>
                                     </li>

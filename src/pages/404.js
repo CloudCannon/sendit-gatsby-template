@@ -36,6 +36,7 @@ const NotFound = (props) => {
     data: {
       ...node.frontmatter,
     },
+    slug: props.path
   };
 
   const LiveEditingComponent = CloudCannonConnect(({page}) => <Blocks content_blocks={page.data.content_blocks} ></Blocks>, {

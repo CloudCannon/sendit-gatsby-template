@@ -1,4 +1,3 @@
-import {Link} from "gatsby";
 import PricingItem from './item';
 import * as React from 'react'
 

@@ -8,7 +8,10 @@
     "build": "gatsby telemetry --disable && gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "prebuild:fetch-theme-color": "node fetch-theme-color.js"
+    "prebuild:fetch-theme-color": "node fetch-theme-color.js",
+    "lint-autofix": "eslint --fix 'src/**' --cache",
+    "lint-code": "eslint 'src/**' --cache",
+    "lint": "npm run lint-autofix && npm run lint-code"
   },
   "dependencies": {
     "@cloudcannon/react-connector": "^2.0.0",
@@ -30,7 +33,8 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
-    "sass": "^1.39.1"
+    "sass": "^1.39.1",
+    "url-join": "^5.0.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",

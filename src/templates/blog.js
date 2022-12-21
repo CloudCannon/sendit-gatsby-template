@@ -82,13 +82,12 @@ export const query = graphql`
   }
 `
 const BlogPage = (props) => {
-  console.log('props')
-  console.log(props)
   const node = props.data.page.nodes[0];
   const page = {
     data: {
       ...node.frontmatter,
     },
+    slug: props.path
   };
 
   const posts = {

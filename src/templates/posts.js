@@ -11,7 +11,8 @@ const PostTemplate = (props) => {
       ...node.frontmatter,
     },
     content_html: node.html,
-    wordCount: node.wordCount.words
+    wordCount: node.wordCount.words,
+    slug: props.path
 
   };
 
@@ -38,8 +39,7 @@ const PostTemplate = (props) => {
 export const query = graphql`
 query ($id: String) {
   page: allMarkdownRemark(filter: {fields: {sourceName: {eq: "posts"}}, id: {eq: $id}}) {
-    nodes {
-      
+    nodes {      
         frontmatter {
             date
             title
