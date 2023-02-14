@@ -1,12 +1,12 @@
 import React from 'react'
-import {Link} from 'gatsby';
+import { Link } from 'gatsby';
 import data from '../../../lib/data';
 
 
 export default function Navigation({ page }) {
 
     const [isSticky, setSticky] = React.useState(false)
-   
+
     const handleScroll = () => {
         setSticky(window.scrollY >= 70)
     }
@@ -14,9 +14,9 @@ export default function Navigation({ page }) {
     React.useEffect(() => {
         window.addEventListener("scroll", handleScroll);
         return () => {
-          window.removeEventListener("scroll", handleScroll);
+            window.removeEventListener("scroll", handleScroll);
         };
-      }, []);
+    }, []);
 
     return (
         <>
