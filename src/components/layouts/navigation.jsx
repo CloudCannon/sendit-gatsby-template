@@ -3,7 +3,7 @@ import {Link} from 'gatsby';
 import data from '../../../lib/data';
 
 
-export default function Navigation({ children, page }) {
+export default function Navigation({ page }) {
 
     const [isSticky, setSticky] = React.useState(false)
    
@@ -105,7 +105,7 @@ export default function Navigation({ children, page }) {
 
                                 {data.navigation.items.map((link, i) => (
                                     <li key={i} className="nav-item">
-                                        <Link href={`${link.link}`} className={`nav-link ${(page?.slug === '' ? 'home' : page?.slug?.toLowerCase()) === link.text.toLowerCase() ? 'active' : ''}`}>
+                                        <Link href={`${link.link}`} className={`nav-link ${(page?.slug === '' ? 'home' : page?.slug?.toLowerCase().replaceAll('/', '')) === link.text.toLowerCase() ? 'active' : ''}`}>
                                             {link.text}
                                         </Link>
                                     </li>

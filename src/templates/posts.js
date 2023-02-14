@@ -1,8 +1,44 @@
+import globalData from '../../lib/data';
 import * as React from 'react'
 import { graphql } from 'gatsby'
 import DefaultLayout from '../components/layouts/default';
 import BlogPost from '../components/blog/post';
 import { CloudCannonConnect } from '@cloudcannon/react-connector'
+import urlJoin from 'url-join';
+import { GlobalHead } from "../components/layouts/head"
+
+export const Head = ({data, location}) => {
+  const node = data.page.nodes[0];
+  const page = {
+    data: {
+      ...node.frontmatter,
+    },
+    slug: location.pathname
+  };
+  return (
+     <GlobalHead data={data} location={location}>
+
+			<script type='application/ld+json'>
+				{`{
+					"@context": "https://schema.org",
+					"@type": "BlogPosting",
+					"datePublished": "${page.data.date}",
+					"mainEntityOfPage": {
+						"@type": "WebPage",
+						"@id": "${urlJoin(globalData.site.baseurl, page.data.seo?.canonical_url || page.slug)}"
+					},
+					"headline": "${page.data.title}",
+					"image": "${[page.data.seo?.featured_image || page.data.featuredImg.image || null]}",
+					"dateModified": "${page.data.date}",
+					"author": {
+						"@type": "Person",
+						"name": "${page.data.author}"
+					}
+				}`}
+			</script>
+     </GlobalHead>
+  )
+}
 
 const PostTemplate = (props) => {
   const node = props.data.page.nodes[0];

@@ -3,7 +3,14 @@ import { graphql } from 'gatsby'
 import DefaultLayout from '../components/layouts/default';
 import Blocks from '../components/shared/blocks';
 import { CloudCannonConnect } from '@cloudcannon/react-connector'
+import { GlobalHead } from "../components/layouts/head"
 
+export const Head = ({data, location}) => {
+  return (
+     <GlobalHead data={data} location={location}>
+     </GlobalHead>
+  )
+}
 
 const PagesTemplate = (props) => {
   const node = props.data.page.nodes[0];

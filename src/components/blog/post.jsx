@@ -1,8 +1,5 @@
 import PostSummary from '../../components/posts/summary';
 import * as React from 'react'
-import data from '../../../lib/data';
-import { Helmet } from 'react-helmet'
-import urlJoin from 'url-join';
 const { DateTime } = require("luxon");
 
 export default function BlogPost({ page, posts, headline, pageNo }) {
@@ -11,27 +8,6 @@ export default function BlogPost({ page, posts, headline, pageNo }) {
 	const readingTime = Math.floor(wordCount / 183)
 	return (
 		<>
-			<Helmet>
-			<script type='application/ld+json'>
-				{`{
-					"@context": "https://schema.org",
-					"@type": "BlogPosting",
-					"datePublished": ${page.data.date},
-					"mainEntityOfPage": {
-						"@type": "WebPage",
-						"@id": ${urlJoin(data.site.baseurl, page.data.seo?.canonical_url || page.slug)}
-					},
-					"headline": ${page.data.title},
-					"image": ${[page.data.seo?.featured_image || page.data.featuredImg.image || null]},
-					"dateModified": ${page.data.date},
-					"author": {
-						"@type": "Person",
-						"name": ${page.data.author}
-					}
-				}`}
-			</script>
-
-			</Helmet>
 			<section className="blog-details">
 				<div className="container">
 					<div className="row">

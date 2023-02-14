@@ -3,8 +3,6 @@ module.exports = {
     title: "Sendit Gatsby",
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
