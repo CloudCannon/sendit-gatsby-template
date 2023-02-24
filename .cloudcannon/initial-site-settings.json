@@ -1,7 +1,8 @@
 {
     "ssg": "gatsby",
     "build_configuration": {
-        "preserved_paths": "node_modules/",
+        "preserved_paths": ".cache/,node_modules/",
+        "preserveOutput": true,
         "environment_variables": [],
         "install_command": "",
 	    "build_command": "",

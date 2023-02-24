@@ -15,7 +15,6 @@
   },
   "dependencies": {
     "@cloudcannon/react-connector": "^2.0.0",
-    "@cloudcannon/reader": "^0.0.5",
     "@googlemaps/js-api-loader": "^1.12.2",
     "@makotot/ghostui": "^2.0.0",
     "anser": "^2.1.0",
