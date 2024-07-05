@@ -60,11 +60,11 @@ export const query = graphql`
           title
           tags
           author
-          thumbImg {
+          thumb_image: {
             image
             image_alt
           }
-          featuredImg {
+          featured_image {
             image
             image_alt
           }

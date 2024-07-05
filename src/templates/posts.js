@@ -28,7 +28,7 @@ export const Head = ({data, location}) => {
 						"@id": "${urlJoin(globalData.site.baseurl, page.data.seo?.canonical_url || page.slug)}"
 					},
 					"headline": "${page.data.title}",
-					"image": "${[page.data.seo?.featured_image || page.data.featuredImg.image || null]}",
+					"image": "${[page.data.seo?.featured_image || page.data.featured_image.image || null]}",
 					"dateModified": "${page.data.date}",
 					"author": {
 						"@type": "Person",
@@ -81,11 +81,11 @@ query ($id: String) {
             title
             tags
             author
-            thumbImg {
+            thumb_image: {
                 image
                 image_alt
             }
-            featuredImg {
+            featured_image {
                 image
                 image_alt
             }
@@ -114,11 +114,11 @@ query ($id: String) {
         title
         tags
         author
-        thumbImg {
+        thumb_image: {
           image
           image_alt
         }
-        featuredImg {
+        featured_image {
           image
           image_alt
         }

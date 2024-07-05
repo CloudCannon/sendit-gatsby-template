@@ -12,10 +12,10 @@ seo:
 tags:
   - blog
 author: 
-thumbImg:
+thumb_image:
   image: 
   image_alt: 
-featuredImg:
+featured_image:
   image: 
   image_alt: 
 ---

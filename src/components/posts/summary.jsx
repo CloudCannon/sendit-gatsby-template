@@ -9,7 +9,7 @@ export default function PostSummary({ post }) {
                 <article className="blog-post">
                     <div className="blog-post-thumb">
                         <Link href={`/blog/${post.slug}`}>
-                            <img src={post.data.thumbImg.image} alt={post.data.thumbImg.image_alt} loading="lazy" />
+                            <img src={post.data.thumb_image.image} alt={post.data.thumb_image.image_alt} loading="lazy" />
                         </Link>
                     </div>
                     <div className="blog-post-content">
