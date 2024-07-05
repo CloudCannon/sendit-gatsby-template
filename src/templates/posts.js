@@ -81,7 +81,7 @@ query ($id: String) {
             title
             tags
             author
-            thumb_image: {
+            thumb_image {
                 image
                 image_alt
             }
@@ -114,7 +114,7 @@ query ($id: String) {
         title
         tags
         author
-        thumb_image: {
+        thumb_image {
           image
           image_alt
         }
