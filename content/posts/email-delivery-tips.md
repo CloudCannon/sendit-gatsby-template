@@ -5,10 +5,10 @@ tags:
   - email
   - blog
 author: Gerard Hopper
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-1.jpg
   image_alt: Arial shot of people working
-featuredImg:
+featured_image:
   image: /images/blog/featured-image-1.jpg
   image_alt: Child using a computer
 seo:

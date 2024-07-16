@@ -34,9 +34,9 @@ export default function BlogPost({ page, posts, headline, pageNo }) {
 								</div>
 								<div className="rounded-box mb-xxl-11 mb-8">
 									<img
-										src={page.data.featuredImg.image}
+										src={page.data.featured_image.image}
 										className="w-100"
-										alt={page.data.featuredImg.image_alt}
+										alt={page.data.featured_image.image_alt}
 									/>
 								</div>
 								<div style={{ "max-width": "900px", margin: "0 auto" }} dangerouslySetInnerHTML={{ __html: page.content_html }}></div>

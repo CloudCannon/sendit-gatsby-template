@@ -5,10 +5,10 @@ tags:
   - technology
   - blog
 author: Wendy Parkes
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-3.jpg
   image_alt: Staff meeting
-featuredImg:
+featured_image:
   image: /images/blog/featured-image-5.jpg
   image_alt: Laptop, phone and coffee
 seo:

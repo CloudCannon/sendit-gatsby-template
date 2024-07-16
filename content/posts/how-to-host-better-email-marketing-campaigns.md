@@ -5,10 +5,10 @@ tags:
   - marketing
   - blog
 author: Arther Conal
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-2.jpg
   image_alt: People conversing
-featuredImg:
+featured_image:
   image: /images/blog/featured-image-2.jpg
   image_alt: Children looking at a computer
 seo:

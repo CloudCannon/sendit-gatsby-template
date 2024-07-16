@@ -5,10 +5,10 @@ tags:
   - marketing
   - blog
 author: Aaron Britt
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-6.jpg
   image_alt: People working on laptops and looking at charts
-featuredImg:
+featured_image:
   image: /images/blog/featured-image-2.jpg
   image_alt: Children looking at a laptop
 seo:

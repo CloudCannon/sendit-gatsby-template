@@ -5,10 +5,10 @@ tags:
   - marketing
   - blog
 author: Wendy Parkes
-thumbImg:
+thumb_image:
   image: /images/blog/blog-thumb-4.jpg
   image_alt: Group of people working
-featuredImg:
+featured_image:
   image: /images/blog/featured-image-4.jpg
   image_alt: Person drinking coffee
 seo:
