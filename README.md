@@ -52,4 +52,6 @@ Sendit is set up for adding, updating and removing pages, components, posts, por
 
 * Theme colors can be set in *Data* / *Theme*
 * The main colors are set and variants of them are computed
+* The script to compute the colors is called `fetch-theme-color.js`
+* There is a script definition in `package.json` called `prebuild:fetch-theme-color`; *this prebuild runs automatically on CloudCannon but will need to be manually run for local development*
 * The colors will update on the next build
